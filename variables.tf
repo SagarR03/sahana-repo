@@ -30,7 +30,7 @@ variable "resource_query_tag_values" {
 variable "resource_query_type" {
   description = "The resource query as a JSON string"
   type        = string
-  default     = "CLOUDFORMATION_STACK_1_0"
+  default     = "TAG_FILTERS_1_0"
 }
 
 variable "resource_group_tags" {
