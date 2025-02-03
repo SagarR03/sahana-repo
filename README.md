@@ -1,26 +1,24 @@
 # sahana-repo
 
-## Argument Reference
+## Terraform
 
-This resource supports the following arguments:
+This repository contains Terraform configurations for managing AWS resource groups. 
 
-- `name` - (Required) The resource group's name. A resource group name can have a maximum of 127 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with AWS or aws.
-- `configuration` - (Optional) A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. See below for details.
-- `description` - (Optional) A description of the resource group.
-- `resource_query` - (Required) A resource_query block. Resource queries are documented below.
-- `tags` - (Optional) Key-value map of resource tags. If configured with a provider default_tags configuration block present, tags with matching keys will overwrite those defined at the provider-level.
+### Files
 
-The `resource_query` block supports the following arguments:
+- `variables.tf`: Defines the input variables for the Terraform configuration.
+- `providers.tf`: Specifies the required providers and their versions.
+- `main.tf`: Contains the main resource definitions and configurations.
 
-- `query` - (Required) The resource query as a JSON string.
-- `type` - (Required) The type of the resource query. Defaults to `TAG_FILTERS_1_0`.
+### Usage
 
-The `configuration` block supports the following arguments:
-
-- `type` - (Required) Specifies the type of group configuration item.
-- `parameters` - (Optional) A collection of parameters for this group configuration item. See below for details.
-
-The `parameters` block supports the following arguments:
-
-- `name` - (Required) The name of the group configuration parameter.
-- `values` - (Optional) The value or values to be used for the specified parameter.
+1. Ensure you have Terraform installed.
+2. Configure your AWS credentials.
+3. Initialize the Terraform configuration:
+    ```sh
+    terraform init
+    ```
+4. Apply the Terraform configuration:
+    ```sh
+    terraform apply
+    ```
